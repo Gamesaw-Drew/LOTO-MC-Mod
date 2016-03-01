@@ -1,0 +1,16 @@
+[
+{
+  "modid": "mememod",
+  "name": "Meme Mod - With LOTO Content",
+  "description": "The Meme Mod (With LOTO Content)",
+  "version": "Alpha 1.4.2",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Gamesaw"],
+  "credits": "Hitler, Trump, Gabe Newell, Chris Van Jiew",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

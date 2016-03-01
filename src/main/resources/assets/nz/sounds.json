@@ -1,0 +1,4 @@
+{
+ "machines": {"category": "master","sounds": [{"name": "machines","stream": false}]},
+ "hit": {"category": "master","sounds": [{"name": "hit", "stream": false}]}
+}
