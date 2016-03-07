@@ -10,3 +10,6 @@ item.OberlordAxe.name=The Overlord's Axe
 item.kappaFish.name=§1K§2a§3p§4p§5a §6F§7i§8s§9h
 item.sword.amd.name=AMD Sword
 item.classicBow.name=Classic Bow
+
+tile.ChrisMachine.name=Chris's Machine
+entity.oberlordminion.name=Overlord Minion

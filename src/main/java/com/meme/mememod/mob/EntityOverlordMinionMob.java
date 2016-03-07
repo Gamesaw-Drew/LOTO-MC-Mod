@@ -33,6 +33,7 @@ public class EntityOverlordMinionMob extends EntityMob {
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityVillager.class, 0, false));
         this.setSize(0.6F, 1.5F);
+        this.allowLeashing();
 	}
 
 	public boolean isAIEnabled()
@@ -44,7 +45,7 @@ public class EntityOverlordMinionMob extends EntityMob {
     {
         super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(100.0D);
-        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.2D);
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.16D);
         this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(6.0D);
     }
     
