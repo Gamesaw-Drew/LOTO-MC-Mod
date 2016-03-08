@@ -1,6 +1,7 @@
 package com.meme.mememod;
 
 import com.meme.mememod.armor.HitlerClothes;
+import com.meme.mememod.armor.OberlordArmor;
 import com.meme.mememod.armor.dwiGlassesHelm;
 import com.meme.mememod.block.ChrisMachine;
 import com.meme.mememod.crafting.LotoRecipes;
@@ -51,6 +52,7 @@ public class MemeMod {
 	public static final String VERSION = "Alpha 1.4.1";
 	public static final ItemArmor.ArmorMaterial hitlerClothesMaterial = EnumHelper.addArmorMaterial("hitlerClothesMaterial", 6969, new int[]{4,6,3,2}, 30);
 	public static final ItemArmor.ArmorMaterial dwiGlassesMaterial = EnumHelper.addArmorMaterial("dwiGlassesMaterial", 6969, new int[]{4,6,3,2}, 30);
+	public static final ItemArmor.ArmorMaterial oberlordArmorMaterial = EnumHelper.addArmorMaterial("oberlordArmorMaterial", 6969, new int[]{4,6,3,2}, 30);
 
 	@Metadata
 	public static ModMetadata meta;
@@ -92,6 +94,12 @@ public class MemeMod {
 	public static Item oberlordSword;
 	public static Item oberlordPick;
 	public static Item oberlordAxe;
+	
+	// Oberlord armor
+	public static Item oberlordHead;
+	public static Item oberlordTorso;
+	public static Item oberlordLegs;
+	public static Item oberlordShoes;
 	
 	// Kappafish
 	public static Item kappaFish;
@@ -146,18 +154,18 @@ public class MemeMod {
 		debnotes = new DebNotes().setUnlocalizedName("DebNotes").setTextureName("nz:debnotes").setCreativeTab(tabMemeMod);
 		GameRegistry.registerItem(debnotes, debnotes.getUnlocalizedName().substring(5));
 		
-		// Hitler Clothes
-		hitlerHelm = new HitlerClothes(hitlerClothesMaterial, 0, 0).setUnlocalizedName("HitlerHelm").setCreativeTab(tabMemeMod);
-		hitlerTop = new HitlerClothes(hitlerClothesMaterial, 0, 1).setUnlocalizedName("HitlerTop").setCreativeTab(tabMemeMod);
-		hitlerBottom = new HitlerClothes(hitlerClothesMaterial, 0, 2).setUnlocalizedName("HitlerBottom").setCreativeTab(tabMemeMod);
-		hitlerShoes = new HitlerClothes(hitlerClothesMaterial, 0, 3).setUnlocalizedName("HitlerShoes").setCreativeTab(tabMemeMod);
+		// Oberlord Armor
+		oberlordHead = new OberlordArmor(oberlordArmorMaterial, 0, 0).setUnlocalizedName("OberlordHead").setCreativeTab(tabLoto);
+		oberlordTorso = new OberlordArmor(oberlordArmorMaterial, 0, 1).setUnlocalizedName("OberlordTorso").setCreativeTab(tabLoto);
+		oberlordLegs = new OberlordArmor(oberlordArmorMaterial, 0, 2).setUnlocalizedName("OberlordLegs").setCreativeTab(tabLoto);
+		oberlordShoes = new OberlordArmor(oberlordArmorMaterial, 0, 3).setUnlocalizedName("OberlordShoes").setCreativeTab(tabLoto);
 		
-		if (!lotobuild){
-			// Hitler's Clothes (Disable for LOTO Builds)
-			GameRegistry.registerItem(hitlerHelm, hitlerHelm.getUnlocalizedName().substring(5));
-			GameRegistry.registerItem(hitlerTop, hitlerTop.getUnlocalizedName().substring(5));
-			GameRegistry.registerItem(hitlerBottom, hitlerBottom.getUnlocalizedName().substring(5));
-			GameRegistry.registerItem(hitlerShoes, hitlerShoes.getUnlocalizedName().substring(5));
+		if (lotobuild){
+			// Oberlord Armor
+			GameRegistry.registerItem(oberlordHead, oberlordHead.getUnlocalizedName().substring(5));
+			GameRegistry.registerItem(oberlordTorso, oberlordTorso.getUnlocalizedName().substring(5));
+			GameRegistry.registerItem(oberlordLegs, oberlordLegs.getUnlocalizedName().substring(5));
+			GameRegistry.registerItem(oberlordShoes, oberlordShoes.getUnlocalizedName().substring(5));
 		}
 		
 		if (lotobuild){
