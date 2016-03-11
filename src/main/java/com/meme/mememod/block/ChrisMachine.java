@@ -1,6 +1,8 @@
 package com.meme.mememod.block;
 
 import com.meme.mememod.MemeMod;
+import com.meme.mememod.create.CreateBlocks;
+import com.meme.mememod.create.CreateItems;
 import com.meme.mememod.machine.EntityMachinePrimed;
 
 import net.minecraft.block.Block;
@@ -22,7 +24,7 @@ public class ChrisMachine extends Block {
 	
     public boolean onBlockActivated(World p_149727_1_, int p_149727_2_, int p_149727_3_, int p_149727_4_, EntityPlayer p_149727_5_, int p_149727_6_, float p_149727_7_, float p_149727_8_, float p_149727_9_)
     {
-        if (p_149727_5_.getCurrentEquippedItem() != null && p_149727_5_.getCurrentEquippedItem().getItem() == MemeMod.gtx970)
+        if (p_149727_5_.getCurrentEquippedItem() != null && p_149727_5_.getCurrentEquippedItem().getItem() == CreateItems.gtx970)
         {
             this.func_150114_a(p_149727_1_, p_149727_2_, p_149727_3_, p_149727_4_, 1, p_149727_5_);
             //p_149727_1_.setBlockToAir(p_149727_2_, p_149727_3_, p_149727_4_);

@@ -6,6 +6,9 @@ import com.meme.mememod.armor.dwiGlassesHelm;
 import com.meme.mememod.block.ChrisMachine;
 import com.meme.mememod.crafting.LotoRecipes;
 import com.meme.mememod.crafting.MemeModRecipes;
+import com.meme.mememod.create.CreateBlocks;
+import com.meme.mememod.create.CreateItems;
+import com.meme.mememod.dimension.DimensionOverlord;
 import com.meme.mememod.init.IProxy;
 import com.meme.mememod.item.ChipmunkMeme;
 import com.meme.mememod.item.DebNotes;
@@ -50,9 +53,6 @@ public class MemeMod {
 	
 	public static final String MODID = "mememod";
 	public static final String VERSION = "Alpha 1.4.1";
-	public static final ItemArmor.ArmorMaterial hitlerClothesMaterial = EnumHelper.addArmorMaterial("hitlerClothesMaterial", 6969, new int[]{4,6,3,2}, 30);
-	public static final ItemArmor.ArmorMaterial dwiGlassesMaterial = EnumHelper.addArmorMaterial("dwiGlassesMaterial", 6969, new int[]{4,6,3,2}, 30);
-	public static final ItemArmor.ArmorMaterial oberlordArmorMaterial = EnumHelper.addArmorMaterial("oberlordArmorMaterial", 6969, new int[]{4,6,3,2}, 30);
 
 	@Metadata
 	public static ModMetadata meta;
@@ -60,60 +60,6 @@ public class MemeMod {
 	@Instance(MemeMod.MODID)
 	public static MemeMod modInstance;
 	
-	// Chris's Machine (M)
-	public static Block ChrisMachine;
-
-	// Deal with it glasses (D)
-	public static Item dwiglasses;
-	
-	// Chipmunk Meme Item (C)
-	public static Item chipmunkmeme;
-
-	// 970 item (G)
-	public static Item gtx970;
-	
-	// Deb's Notes (N)
-	public static Item debnotes;
-	
-	// Sub Items (Items used for crafting the Main Items):
-	
-	// Crafting DWIGlasses:
-	// Rims (R)
-	public static Item glassesrims;
-	
-	// Lens (L)
-	public static Item glasseslens;
-	
-	// hitlerHelm
-	public static Item hitlerHelm;
-	public static Item hitlerTop;
-	public static Item hitlerBottom;
-	public static Item hitlerShoes;
-	
-	// Oberlord Items
-	public static Item oberlordSword;
-	public static Item oberlordPick;
-	public static Item oberlordAxe;
-	
-	// Oberlord armor
-	public static Item oberlordHead;
-	public static Item oberlordTorso;
-	public static Item oberlordLegs;
-	public static Item oberlordShoes;
-	
-	// Kappafish
-	public static Item kappaFish;
-	
-	// Amd Sword
-	public static Item amdSword;
-	
-	public static Item classicBow;
-	
-	// Amd Tool Material
-	public static final Item.ToolMaterial amdToolMaterial = EnumHelper.addToolMaterial("amdToolMaterial", 1, 23, 10.0F, 2F, 30);
-	
-	// Oberlord Tool Material
-	public static final Item.ToolMaterial oberlordToolMaterial = EnumHelper.addToolMaterial("oberlordToolMaterial", 5, 16542, 20.0F, 16.0F, 30);
 	
 	// Toggles LOTO Build. (Disables and enables specific features)
 	public static boolean lotobuild = true;
@@ -130,62 +76,11 @@ public class MemeMod {
 	@EventHandler
 	public void init(FMLInitializationEvent event)
 	{
-		
-		// this prevents server crashing
 		proxy.registerRenderers();
-		
-		
-		ChrisMachine = new ChrisMachine().setBlockName("ChrisMachine").setBlockTextureName("nz:chrismachine").setCreativeTab(tabMemeMod);
-		GameRegistry.registerBlock(ChrisMachine, ChrisMachine.getUnlocalizedName().substring(5));
-		
-		// Main Items:
-		// Deal with it Glasses Helmet Item
-		dwiglasses = new dwiGlassesHelm(dwiGlassesMaterial, 0, 0).setUnlocalizedName("dwiglasses").setCreativeTab(tabMemeMod).setTextureName("nz:dwiglasses");
-		GameRegistry.registerItem(dwiglasses, dwiglasses.getUnlocalizedName().substring(5));
-		
-		// Chipmunk Meme item
-		chipmunkmeme = new ChipmunkMeme().setUnlocalizedName("ChipmunkMeme").setTextureName("nz:chipmunkmeme").setCreativeTab(tabLoto);
-		GameRegistry.registerItem(chipmunkmeme, chipmunkmeme.getUnlocalizedName().substring(5));
-		
-		// 970
-		gtx970 = new Gtx970().setUnlocalizedName("Gtx970").setTextureName("nz:gpu970").setCreativeTab(tabMemeMod);
-		GameRegistry.registerItem(gtx970, gtx970.getUnlocalizedName().substring(5));
-		
-		debnotes = new DebNotes().setUnlocalizedName("DebNotes").setTextureName("nz:debnotes").setCreativeTab(tabMemeMod);
-		GameRegistry.registerItem(debnotes, debnotes.getUnlocalizedName().substring(5));
-		
-		// Oberlord Armor
-		oberlordHead = new OberlordArmor(oberlordArmorMaterial, 0, 0).setUnlocalizedName("OberlordHead").setCreativeTab(tabLoto);
-		oberlordTorso = new OberlordArmor(oberlordArmorMaterial, 0, 1).setUnlocalizedName("OberlordTorso").setCreativeTab(tabLoto);
-		oberlordLegs = new OberlordArmor(oberlordArmorMaterial, 0, 2).setUnlocalizedName("OberlordLegs").setCreativeTab(tabLoto);
-		oberlordShoes = new OberlordArmor(oberlordArmorMaterial, 0, 3).setUnlocalizedName("OberlordShoes").setCreativeTab(tabLoto);
-		
-		if (lotobuild){
-			// Oberlord Armor
-			GameRegistry.registerItem(oberlordHead, oberlordHead.getUnlocalizedName().substring(5));
-			GameRegistry.registerItem(oberlordTorso, oberlordTorso.getUnlocalizedName().substring(5));
-			GameRegistry.registerItem(oberlordLegs, oberlordLegs.getUnlocalizedName().substring(5));
-			GameRegistry.registerItem(oberlordShoes, oberlordShoes.getUnlocalizedName().substring(5));
-		}
-		
-		if (lotobuild){
-			// Oberlord Items
-			oberlordSword = new ItemOberlordSword(oberlordToolMaterial).setUnlocalizedName("OberlordSword").setCreativeTab(tabLoto).setTextureName("nz:oberlordsword");
-			oberlordPick = new ItemOberlordPick(oberlordToolMaterial).setUnlocalizedName("OberlordPick").setCreativeTab(tabLoto).setTextureName("nz:oberlordpick");
-			oberlordAxe = new ItemOberlordAxe(oberlordToolMaterial).setUnlocalizedName("OberlordAxe").setCreativeTab(tabLoto).setTextureName("nz:oberlordaxe");
-			GameRegistry.registerItem(oberlordSword, oberlordSword.getUnlocalizedName().substring(5));
-			GameRegistry.registerItem(oberlordPick, oberlordPick.getUnlocalizedName().substring(5));
-			GameRegistry.registerItem(oberlordAxe, oberlordAxe.getUnlocalizedName().substring(5));
-		}
-		
-		kappaFish = new ItemFood(20, 1.0F, true).setUnlocalizedName("kappaFish").setCreativeTab(tabMemeMod).setTextureName("nz:item.kappafish");
-		GameRegistry.registerItem(kappaFish, kappaFish.getUnlocalizedName().substring(5));		
-		
-		amdSword = new ItemAmdSword(amdToolMaterial).setUnlocalizedName("sword.amd").setCreativeTab(tabMemeMod).setTextureName("nz:sword.amd");
-		GameRegistry.registerItem(amdSword, amdSword.getUnlocalizedName().substring(5));
-		
-		classicBow = new ItemClassicBow().setUnlocalizedName("classicBow").setCreativeTab(tabMemeMod).setTextureName("nz:classicbow");
-		GameRegistry.registerItem(classicBow, classicBow.getUnlocalizedName().substring(5));
+
+		// Create blocks
+		CreateBlocks.createBlocks();
+		CreateItems.createItems();
 
 		// Initialize Crafting Recipes
 		
@@ -203,7 +98,7 @@ public class MemeMod {
 	public static CreativeTabs tabMemeMod = new CreativeTabs("tabMemeMod"){
 		@Override
 		public Item getTabIconItem(){
-			return new ItemStack(gtx970).getItem();
+			return new ItemStack(CreateItems.gtx970).getItem();
 		}
 		
 		
@@ -214,11 +109,11 @@ public class MemeMod {
 			public Item getTabIconItem(){
 				
 				if (lotobuild){
-					return new ItemStack(oberlordSword).getItem();
+					return new ItemStack(CreateItems.oberlordSword).getItem();
 				}
 				
 				else{
-					return new ItemStack(chipmunkmeme).getItem();
+					return new ItemStack(CreateItems.chipmunkmeme).getItem();
 				}
 		}
 		
