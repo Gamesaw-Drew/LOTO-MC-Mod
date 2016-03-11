@@ -21,6 +21,7 @@ public class CreateItems
     public static Item SteakSteakSteakSteak; // is that enough?
     public static Item DiamondSwordApple;
     public static Item TNTSteak; // DANGER!!!!
+    public static Item DiamondSwordSwordSteak; // NEEDS ETHANS MOD FOR MSM:DIAMONDSWORDSWORD TO CRAFT
 	
     public static void createItems() 
     {
