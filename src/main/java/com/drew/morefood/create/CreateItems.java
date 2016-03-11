@@ -7,22 +7,20 @@ import net.minecraft.item.ItemFood;
 import net.minecraftforge.common.util.EnumHelper;
 
 import com.meme.mememod.MemeMod;
-import com.meme.mememod.armor.OberlordArmor;
-import com.meme.mememod.armor.dwiGlassesHelm;
-import com.meme.mememod.block.ChrisMachine;
-import com.meme.mememod.item.ChipmunkMeme;
-import com.meme.mememod.item.DebNotes;
-import com.meme.mememod.item.Gtx970;
-import com.meme.mememod.item.ItemAmdSword;
-import com.meme.mememod.item.ItemClassicBow;
-import com.meme.mememod.item.ItemOberlordAxe;
-import com.meme.mememod.item.ItemOberlordPick;
-import com.meme.mememod.item.ItemOberlordSword;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class CreateItems 
 {
+	
+    // items:
+    public static Item DiamondSteak;
+    public static Item PistonSteak;
+    public static Item SteakSteak;
+    public static Item SteakSteakSteak;
+    public static Item SteakSteakSteakSteak; // is that enough?
+    public static Item DiamondSwordApple;
+    public static Item TNTSteak; // DANGER!!!!
 	
     public static void createItems() 
     {
