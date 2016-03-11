@@ -15,7 +15,6 @@ public class CreateBlocks
     {
     	ChrisMachine = new ChrisMachine().setBlockName("ChrisMachine").setBlockTextureName("nz:chrismachine").setCreativeTab(MemeMod.tabMemeMod);
     	GameRegistry.registerBlock(ChrisMachine, ChrisMachine.getUnlocalizedName().substring(5));
-    	
     }
     
 }

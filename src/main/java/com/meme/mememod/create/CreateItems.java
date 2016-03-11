@@ -51,31 +51,24 @@ public class CreateItems
 	
     public static void createItems() 
     {
-
-		// Main Items:
-		// Deal with it Glasses Helmet Item
 		dwiglasses = new dwiGlassesHelm(dwiGlassesMaterial, 0, 0).setUnlocalizedName("dwiglasses").setCreativeTab(MemeMod.tabMemeMod).setTextureName("nz:dwiglasses");
 		GameRegistry.registerItem(dwiglasses, dwiglasses.getUnlocalizedName().substring(5));
 		
-		// Chipmunk Meme item
 		chipmunkmeme = new ChipmunkMeme().setUnlocalizedName("ChipmunkMeme").setTextureName("nz:chipmunkmeme").setCreativeTab(MemeMod.tabLoto);
 		GameRegistry.registerItem(chipmunkmeme, chipmunkmeme.getUnlocalizedName().substring(5));
 		
-		// 970
 		gtx970 = new Gtx970().setUnlocalizedName("Gtx970").setTextureName("nz:gpu970").setCreativeTab(MemeMod.tabMemeMod);
 		GameRegistry.registerItem(gtx970, gtx970.getUnlocalizedName().substring(5));
 		
 		debnotes = new DebNotes().setUnlocalizedName("DebNotes").setTextureName("nz:debnotes").setCreativeTab(MemeMod.tabMemeMod);
 		GameRegistry.registerItem(debnotes, debnotes.getUnlocalizedName().substring(5));
-		
-		// Oberlord Armor
+
 		oberlordHead = new OberlordArmor(oberlordArmorMaterial, 0, 0).setUnlocalizedName("OberlordHead").setCreativeTab(MemeMod.tabLoto);
 		oberlordTorso = new OberlordArmor(oberlordArmorMaterial, 0, 1).setUnlocalizedName("OberlordTorso").setCreativeTab(MemeMod.tabLoto);
 		oberlordLegs = new OberlordArmor(oberlordArmorMaterial, 0, 2).setUnlocalizedName("OberlordLegs").setCreativeTab(MemeMod.tabLoto);
 		oberlordShoes = new OberlordArmor(oberlordArmorMaterial, 0, 3).setUnlocalizedName("OberlordShoes").setCreativeTab(MemeMod.tabLoto);
 		
 		if (MemeMod.lotobuild){
-			// Oberlord Armor
 			GameRegistry.registerItem(oberlordHead, oberlordHead.getUnlocalizedName().substring(5));
 			GameRegistry.registerItem(oberlordTorso, oberlordTorso.getUnlocalizedName().substring(5));
 			GameRegistry.registerItem(oberlordLegs, oberlordLegs.getUnlocalizedName().substring(5));
@@ -83,7 +76,6 @@ public class CreateItems
 		}
 		
 		if (MemeMod.lotobuild){
-			// Oberlord Items
 			oberlordSword = new ItemOberlordSword(oberlordToolMaterial).setUnlocalizedName("OberlordSword").setCreativeTab(MemeMod.tabLoto).setTextureName("nz:oberlordsword");
 			oberlordPick = new ItemOberlordPick(oberlordToolMaterial).setUnlocalizedName("OberlordPick").setCreativeTab(MemeMod.tabLoto).setTextureName("nz:oberlordpick");
 			oberlordAxe = new ItemOberlordAxe(oberlordToolMaterial).setUnlocalizedName("OberlordAxe").setCreativeTab(MemeMod.tabLoto).setTextureName("nz:oberlordaxe");
