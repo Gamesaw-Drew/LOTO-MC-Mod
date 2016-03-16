@@ -50,8 +50,8 @@ public class CreateItems
     {
     	if(isMsmInstalled)
     	{				  // True means we want msm recipes, false means we dont
-            foodRecipes.createFoodRecipes(true)
+            foodRecipes.createFoodRecipes(true);
     	}
-    	foodRecipes.createFoodRecipes(false)
+    	foodRecipes.createFoodRecipes(false);
     }
 }
